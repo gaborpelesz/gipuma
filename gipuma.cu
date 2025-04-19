@@ -30,7 +30,7 @@
 // uses smaller (but more) kernels, use if windows watchdog is enabled or if you want frequent display updates
 // (might avoid crashes due to timeout on windows but possibly slows down marginally)
 // only implements EXTRAPOINTFAR (not EXTRAPOINT or EXTRAPOINT2)
-#define SMALLKERNEL
+// #define SMALLKERNEL
 
 
 #define EXTRAPOINTFAR
