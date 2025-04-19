@@ -1179,7 +1179,7 @@ __device__ FORCEINLINE_GIPUMA void gipuma_checkerboard_cu(GlobalState &gs, int2 
 
     //extern __shared__ float tile_left[];
     // via https://stackoverflow.com/questions/27570552/templated-cuda-kernel-with-dynamic-shared-memory
-    extern __shared__ __align__(sizeof(T)) unsigned char my_smem[];
+    extern __shared__ __align__(16) unsigned char my_smem[];
     T *tile_left = reinterpret_cast<T *>(my_smem);
 
 #ifdef SHARED
@@ -1380,7 +1380,7 @@ __device__ FORCEINLINE_GIPUMA void gipuma_checkerboard_spatialPropFar_cu(GlobalS
 
     //extern __shared__ float tile_left[];
     // via https://stackoverflow.com/questions/27570552/templated-cuda-kernel-with-dynamic-shared-memory
-    extern __shared__ __align__(sizeof(T)) unsigned char my_smem[];
+    extern __shared__ __align__(16) unsigned char my_smem[];
     T *tile_left = reinterpret_cast<T *>(my_smem);
 
      // Center
@@ -1498,7 +1498,7 @@ __device__ FORCEINLINE_GIPUMA void gipuma_checkerboard_spatialPropClose_cu(Globa
 
     //extern __shared__ float tile_left[];
     // via https://stackoverflow.com/questions/27570552/templated-cuda-kernel-with-dynamic-shared-memory
-    extern __shared__ __align__(sizeof(T)) unsigned char my_smem[];
+    extern __shared__ __align__(16) unsigned char my_smem[];
     T *tile_left = reinterpret_cast<T *>(my_smem);
 
      // Center
@@ -1624,7 +1624,7 @@ __device__ FORCEINLINE_GIPUMA void gipuma_checkerboard_planeRefinement_cu(Global
 
     //extern __shared__ float tile_left[];
     // via https://stackoverflow.com/questions/27570552/templated-cuda-kernel-with-dynamic-shared-memory
-    extern __shared__ __align__(sizeof(T)) unsigned char my_smem[];
+    extern __shared__ __align__(16) unsigned char my_smem[];
     T *tile_left = reinterpret_cast<T *>(my_smem);
 
     //__shared__ T tile_left [SHARED_SIZE];
